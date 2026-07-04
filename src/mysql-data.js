@@ -1,4 +1,3 @@
-// Auto-generated from mysql.json - DO NOT EDIT
 var EXAM_DATA = {
   "subject": "MySQL数据库",
   "code": "mysql",
@@ -8,7 +7,12 @@ var EXAM_DATA = {
       "id": 1,
       "type": "choice",
       "question": "下列不属于客观世界对象的是",
-      "options": ["超市商品", "一次进货业务", "数字 12.5", "供货商"],
+      "options": [
+        "超市商品",
+        "一次进货业务",
+        "数字 12.5",
+        "供货商"
+      ],
       "answer": "C",
       "explanation": "客观世界对象是指现实世界中可独立存在、可被标识的事物。超市商品、进货业务、供货商都是客观实体或事件，而\"数字 12.5\"只是数据值，是对客观事物属性的描述，本身不是对象。"
     },
@@ -16,7 +20,12 @@ var EXAM_DATA = {
       "id": 2,
       "type": "choice",
       "question": "完整的数据描述格式为（属性名，数据值），其中 19.9 单独写出来属于",
-      "options": ["信息", "纯数据", "语义", "对象"],
+      "options": [
+        "信息",
+        "纯数据",
+        "语义",
+        "对象"
+      ],
       "answer": "B",
       "explanation": "单独的数据值没有属性名赋予语义，属于\"纯数据\"。信息是赋予语义的数据（如\"价格：19.9 元\"），纯数据本身没有明确含义。"
     },
@@ -24,7 +33,12 @@ var EXAM_DATA = {
       "id": 3,
       "type": "choice",
       "question": "数据管理技术发展阶段中，程序与数据依赖性最强的是",
-      "options": ["人工管理", "文件管理", "数据库管理", "分布式管理"],
+      "options": [
+        "人工管理",
+        "文件管理",
+        "数据库管理",
+        "分布式管理"
+      ],
       "answer": "A",
       "explanation": "人工管理阶段数据由程序员直接管理，数据与程序紧密绑定，依赖性最强。文件管理阶段数据可独立存储，数据库管理阶段实现了数据与程序的高度独立。"
     },
@@ -32,7 +46,12 @@ var EXAM_DATA = {
       "id": 4,
       "type": "choice",
       "question": "DB 的中文全称是",
-      "options": ["数据库管理系统", "数据库", "数据库系统", "数据库管理员"],
+      "options": [
+        "数据库管理系统",
+        "数据库",
+        "数据库系统",
+        "数据库管理员"
+      ],
       "answer": "B",
       "explanation": "DB（Database）= 数据库；DBMS = 数据库管理系统；DBS = 数据库系统；DBA = 数据库管理员。"
     },
@@ -40,7 +59,12 @@ var EXAM_DATA = {
       "id": 5,
       "type": "choice",
       "question": "下列不属于 E-R 图三大基础元素的是",
-      "options": ["实体矩形", "属性椭圆", "联系菱形", "函数依赖线段"],
+      "options": [
+        "实体矩形",
+        "属性椭圆",
+        "联系菱形",
+        "函数依赖线段"
+      ],
       "answer": "D",
       "explanation": "E-R 图三大基础元素：实体（矩形）、属性（椭圆）、联系（菱形）。函数依赖线段是关系规范化理论中的概念，不是 E-R 图基本元素。"
     },
@@ -48,7 +72,12 @@ var EXAM_DATA = {
       "id": 6,
       "type": "choice",
       "question": "超市会员与会员购物记录之间的实体联系类型是",
-      "options": ["1:1", "1:n", "m:n", "无联系"],
+      "options": [
+        "1:1",
+        "1:n",
+        "m:n",
+        "无联系"
+      ],
       "answer": "B",
       "explanation": "一个会员可有多条购物记录，但一条记录只属于一个会员，因此是一对多（1:n）关系。"
     },
@@ -56,7 +85,12 @@ var EXAM_DATA = {
       "id": 7,
       "type": "choice",
       "question": "下列符合关系二维表原子性要求的表格是",
-      "options": ["电话列分移动、固定两小格", "一列只存放单一不可拆分数据", "同一行两条相同顾客记录", "表内存在同名字段"],
+      "options": [
+        "电话列分移动、固定两小格",
+        "一列只存放单一不可拆分数据",
+        "同一行两条相同顾客记录",
+        "表内存在同名字段"
+      ],
       "answer": "B",
       "explanation": "原子性（第一范式）要求每个属性值都是不可再分的最小数据单位。选项 A 违反原子性；C 的重复记录和 D 的同名字段都不符合关系表规范。"
     },
@@ -64,7 +98,12 @@ var EXAM_DATA = {
       "id": 8,
       "type": "choice",
       "question": "用来唯一标识一条记录的属性或属性组称为",
-      "options": ["域", "码", "元组", "分量"],
+      "options": [
+        "域",
+        "码",
+        "元组",
+        "分量"
+      ],
       "answer": "B",
       "explanation": "码（Key）是唯一标识记录的属性或属性组。域是取值范围；元组是一行记录；分量是元组中的一个属性值。"
     },
@@ -72,7 +111,12 @@ var EXAM_DATA = {
       "id": 9,
       "type": "choice",
       "question": "一张表的主键在另一张表中出现，该属性称为",
-      "options": ["主键", "候选键", "外键", "域"],
+      "options": [
+        "主键",
+        "候选键",
+        "外键",
+        "域"
+      ],
       "answer": "C",
       "explanation": "外键（Foreign Key）是一个表中的属性，它是另一个表的主键，用于建立表间关联关系。"
     },
@@ -80,7 +124,12 @@ var EXAM_DATA = {
       "id": 10,
       "type": "choice",
       "question": "MySQL 8.0 及以上版本默认存储引擎是",
-      "options": ["MyISAM", "InnoDB", "Memory", "CSV"],
+      "options": [
+        "MyISAM",
+        "InnoDB",
+        "Memory",
+        "CSV"
+      ],
       "answer": "B",
       "explanation": "MySQL 5.5 之前默认是 MyISAM，从 5.5 开始改为 InnoDB，8.0 及以上继续沿用 InnoDB。InnoDB 支持事务、外键、行级锁等高级特性。"
     },
@@ -88,7 +137,12 @@ var EXAM_DATA = {
       "id": 11,
       "type": "choice",
       "question": "下列存储引擎支持事务、外键约束的是",
-      "options": ["MyISAM", "InnoDB", "Memory", "Archive"],
+      "options": [
+        "MyISAM",
+        "InnoDB",
+        "Memory",
+        "Archive"
+      ],
       "answer": "B",
       "explanation": "InnoDB 是唯一支持事务（ACID）和外键约束的存储引擎。MyISAM、Memory、Archive 均不支持事务和外键。"
     },
@@ -96,7 +150,12 @@ var EXAM_DATA = {
       "id": 12,
       "type": "choice",
       "question": "MySQL 服务默认端口号为",
-      "options": ["80", "22", "33060", "3306"],
+      "options": [
+        "80",
+        "22",
+        "33060",
+        "3306"
+      ],
       "answer": "D",
       "explanation": "MySQL 默认端口是 3306。80 是 HTTP 端口；22 是 SSH 端口；33060 是 MySQL X Protocol 端口。"
     },
@@ -104,7 +163,12 @@ var EXAM_DATA = {
       "id": 13,
       "type": "choice",
       "question": "MySQL 超级管理员默认账号是",
-      "options": ["admin", "root", "sa", "user"],
+      "options": [
+        "admin",
+        "root",
+        "sa",
+        "user"
+      ],
       "answer": "B",
       "explanation": "MySQL 默认超级管理员是 root。admin 是通用管理员名；sa 是 SQL Server 的系统管理员；user 不是默认管理员。"
     },
@@ -112,7 +176,12 @@ var EXAM_DATA = {
       "id": 14,
       "type": "choice",
       "question": "MySQL 配置文件中服务端配置段是",
-      "options": ["[client]", "[mysql]", "[mysqld]", "[server]"],
+      "options": [
+        "[client]",
+        "[mysql]",
+        "[mysqld]",
+        "[server]"
+      ],
       "answer": "C",
       "explanation": "[mysqld] 是服务端配置段。[client] 是客户端配置段，[mysql] 是命令行客户端配置段。"
     },
@@ -120,7 +189,12 @@ var EXAM_DATA = {
       "id": 15,
       "type": "choice",
       "question": "存储手机号（11 位固定数字）最优数据类型是",
-      "options": ["int", "char(11)", "varchar(11)", "decimal"],
+      "options": [
+        "int",
+        "char(11)",
+        "varchar(11)",
+        "decimal"
+      ],
       "answer": "B",
       "explanation": "手机号是固定长度数字字符串，char(11) 最合适：① 长度固定，char 比 varchar 效率高；② 不做数学运算，不用 int/decimal；③ 可能以 0 开头，数值类型会丢失前导零。"
     },
@@ -128,7 +202,12 @@ var EXAM_DATA = {
       "id": 16,
       "type": "choice",
       "question": "记录商品进货精确价格，避免浮点误差应选用",
-      "options": ["float", "double", "decimal(6,2)", "int"],
+      "options": [
+        "float",
+        "double",
+        "decimal(6,2)",
+        "int"
+      ],
       "answer": "C",
       "explanation": "decimal（定点数）存储精确小数，无浮点误差。float/double 有精度误差；int 只能存整数。decimal(6,2) 表示共 6 位，小数 2 位。"
     },
@@ -136,7 +215,12 @@ var EXAM_DATA = {
       "id": 17,
       "type": "choice",
       "question": "只记录年份信息，应使用的数据类型",
-      "options": ["date", "year", "datetime", "timestamp"],
+      "options": [
+        "date",
+        "year",
+        "datetime",
+        "timestamp"
+      ],
       "answer": "B",
       "explanation": "year 类型专门存储年份，占 1 字节，范围 1901~2155。date 存年月日；datetime 存日期时间；timestamp 存时间戳。仅需年份时 year 最省空间。"
     },
@@ -144,7 +228,12 @@ var EXAM_DATA = {
       "id": 18,
       "type": "choice",
       "question": "用于查询表结构的 MySQL 命令是",
-      "options": ["desc 表名", "show databases", "drop table", "create database"],
+      "options": [
+        "desc 表名",
+        "show databases",
+        "drop table",
+        "create database"
+      ],
       "answer": "A",
       "explanation": "`desc 表名`（或 `describe 表名`）查看表结构，包括字段名、数据类型、是否为空、键信息等。"
     },
@@ -152,7 +241,12 @@ var EXAM_DATA = {
       "id": 19,
       "type": "choice",
       "question": "提升数据表查询速度的数据库对象是",
-      "options": ["视图", "索引", "触发器", "存储过程"],
+      "options": [
+        "视图",
+        "索引",
+        "触发器",
+        "存储过程"
+      ],
       "answer": "B",
       "explanation": "索引通过创建 B+ 树等数据结构，快速定位满足条件的记录，提升查询速度。视图是虚拟表；触发器是自动执行程序；存储过程是预编译 SQL 集合。"
     },
@@ -160,254 +254,469 @@ var EXAM_DATA = {
       "id": 20,
       "type": "choice",
       "question": "下列 SQL 命令用于向表插入数据的是",
-      "options": ["update", "insert", "delete", "alter"],
+      "options": [
+        "update",
+        "insert",
+        "delete",
+        "alter"
+      ],
       "answer": "B",
       "explanation": "insert 用于插入新数据。update 更新数据；delete 删除数据；alter 修改表结构。"
     },
     {
       "id": 21,
-      "type": "fill",
+      "type": "choice",
       "question": "从现实世界到意识世界的抽象将使用的数据模型是（ ）",
       "answer": "C",
-      "explanation": "**概念数据模型**（如E-R模型）用于从现实世界到信息世界的抽象，不依赖具体计算机系统。"
+      "explanation": "**概念数据模型**（如E-R模型）用于从现实世界到信息世界的抽象，不依赖具体计算机系统。",
+      "options": [
+        "物理数据模型",
+        "逻辑数据模型",
+        "概念数据模型",
+        "数据模型"
+      ]
     },
     {
       "id": 22,
-      "type": "fill",
+      "type": "choice",
       "question": "在数据库系统设计中，设计的核心是（ ）",
       "answer": "B",
-      "explanation": "**模式（Schema）** 是数据库中全体数据的逻辑结构和特征的描述，是数据库设计的核心。"
+      "explanation": "**模式（Schema）** 是数据库中全体数据的逻辑结构和特征的描述，是数据库设计的核心。",
+      "options": [
+        "数据模型",
+        "模式",
+        "数据字典",
+        "数据流图"
+      ]
     },
     {
       "id": 23,
-      "type": "fill",
+      "type": "choice",
       "question": "下列关于数据的说法，正确的是（ ）",
       "answer": "A",
-      "explanation": "数据是描述事物的符号记录，一切符号记录都可称为数据。B错误：数据≠信息；C错误：数据不限于数字；D错误：图像、声音、视频都是数据。"
+      "explanation": "数据是描述事物的符号记录，一切符号记录都可称为数据。B错误：数据≠信息；C错误：数据不限于数字；D错误：图像、声音、视频都是数据。",
+      "options": [
+        "数据是描述事物的符号记录",
+        "数据就是信息",
+        "数据只包括数字",
+        "数据不能是图像声音"
+      ]
     },
     {
       "id": 24,
-      "type": "fill",
+      "type": "choice",
       "question": "数据管理技术中，对程序和数据依赖性最强的是（ ）",
       "answer": "C",
-      "explanation": "**人工管理阶段** 数据由程序管理，数据不独立，程序与数据高度耦合。"
+      "explanation": "**人工管理阶段** 数据由程序管理，数据不独立，程序与数据高度耦合。",
+      "options": [
+        "数据库管理",
+        "文件管理",
+        "人工管理",
+        "分布式管理"
+      ]
     },
     {
       "id": 25,
-      "type": "fill",
+      "type": "choice",
       "question": "数据库系统的英文简称是（ ）",
       "answer": "D",
-      "explanation": "**DBS**（Database System）。DB=数据库，DBA=数据库管理员，DBMS=数据库管理系统。"
+      "explanation": "**DBS**（Database System）。DB=数据库，DBA=数据库管理员，DBMS=数据库管理系统。",
+      "options": [
+        "DB",
+        "DBA",
+        "DBMS",
+        "DBS"
+      ]
     },
     {
       "id": 26,
-      "type": "fill",
+      "type": "choice",
       "question": "使用二维表作为数据结构的数据模型是（ ）",
       "answer": "A",
-      "explanation": "**关系数据模型** 用二维表（关系）表示数据及其联系。"
+      "explanation": "**关系数据模型** 用二维表（关系）表示数据及其联系。",
+      "options": [
+        "关系数据模型",
+        "层次数据模型",
+        "网状数据模型",
+        "面向对象数据模型"
+      ]
     },
     {
       "id": 27,
-      "type": "fill",
+      "type": "choice",
       "question": "下列关于二维表和关系的说法，不正确的是（ ）",
       "answer": "B",
-      "explanation": "关系是规范的二维表，但并非所有二维表都是关系。关系要求：列不可再分、列名唯一、行唯一、行/列无序。"
+      "explanation": "关系是规范的二维表，但并非所有二维表都是关系。关系要求：列不可再分、列名唯一、行唯一、行/列无序。",
+      "options": [
+        "关系是规范的二维表",
+        "所有二维表都是关系",
+        "关系要求列不可再分",
+        "关系中行唯一"
+      ]
     },
     {
       "id": 28,
-      "type": "fill",
+      "type": "choice",
       "question": "下列关于主键和主属性的说法，正确的是（ ）",
       "answer": "A",
-      "explanation": "一个关系只能有一个主键（但可由多个属性组成复合主键）。B错误：主键可由多个属性组成；C错误：主属性是候选键的属性，不一定是主键属性；D错误：主键可以是复合属性。"
+      "explanation": "一个关系只能有一个主键（但可由多个属性组成复合主键）。B错误：主键可由多个属性组成；C错误：主属性是候选键的属性，不一定是主键属性；D错误：主键可以是复合属性。",
+      "options": [
+        "一个关系只能有一个主键",
+        "主键只能由一个属性组成",
+        "主属性就是主键属性",
+        "主键不能是复合属性"
+      ]
     },
     {
       "id": 29,
-      "type": "fill",
+      "type": "choice",
       "question": "保证关系表中记录唯一性的是（ ）",
       "answer": "C",
-      "explanation": "**实体完整性** 要求主键不能为空且唯一，保证记录唯一性。"
+      "explanation": "**实体完整性** 要求主键不能为空且唯一，保证记录唯一性。",
+      "options": [
+        "参照完整性",
+        "用户定义完整性",
+        "实体完整性",
+        "域完整性"
+      ]
     },
     {
       "id": 30,
-      "type": "fill",
+      "type": "choice",
       "question": "下列不是MySQL特性的是（ ）",
       "answer": "B",
-      "explanation": "MySQL是开源、跨平台、成本低、易使用的数据库。\"难以使用\"不是其特性。"
+      "explanation": "MySQL是开源、跨平台、成本低、易使用的数据库。\"难以使用\"不是其特性。",
+      "options": [
+        "开源",
+        "难以使用",
+        "跨平台",
+        "成本低"
+      ]
     },
     {
       "id": 31,
-      "type": "fill",
+      "type": "choice",
       "question": "下列不能跨平台工作的数据库管理系统是（ ）",
       "answer": "B",
-      "explanation": "**SQL Server** 主要运行在Windows平台（虽有Linux版本但原生支持较弱）。MySQL、Oracle、PostgreSQL均跨平台。"
+      "explanation": "**SQL Server** 主要运行在Windows平台（虽有Linux版本但原生支持较弱）。MySQL、Oracle、PostgreSQL均跨平台。",
+      "options": [
+        "MySQL",
+        "SQL Server",
+        "Oracle",
+        "PostgreSQL"
+      ]
     },
     {
       "id": 32,
-      "type": "fill",
+      "type": "choice",
       "question": "数据表仅存储在内存中的存储引擎是（ ）",
       "answer": "D",
-      "explanation": "**Memory** 引擎将数据存储在内存中，速度快但重启后数据丢失。"
+      "explanation": "**Memory** 引擎将数据存储在内存中，速度快但重启后数据丢失。",
+      "options": [
+        "MyISAM",
+        "InnoDB",
+        "Archive",
+        "Memory"
+      ]
     },
     {
       "id": 33,
-      "type": "fill",
+      "type": "choice",
       "question": "在生产环境使用MySQL，最好选择的版本是（ ）",
       "answer": "A",
-      "explanation": "**GA**（General Availability）是正式发布版，最稳定。Alpha是测试版，RC是候选版。"
+      "explanation": "**GA**（General Availability）是正式发布版，最稳定。Alpha是测试版，RC是候选版。",
+      "options": [
+        "GA",
+        "Alpha",
+        "Beta",
+        "RC"
+      ]
     },
     {
       "id": 34,
-      "type": "fill",
+      "type": "choice",
       "question": "下列存储引擎中，支持事务处理的是（ ）",
       "answer": "C",
-      "explanation": "**InnoDB** 支持事务、行级锁、外键。MyISAM和Memory不支持事务。"
+      "explanation": "**InnoDB** 支持事务、行级锁、外键。MyISAM和Memory不支持事务。",
+      "options": [
+        "MyISAM",
+        "Memory",
+        "InnoDB",
+        "Archive"
+      ]
     },
     {
       "id": 35,
-      "type": "fill",
+      "type": "choice",
       "question": "配置MySQL默认存储引擎的配置项是（ ）",
       "answer": "C",
-      "explanation": "`default-storage-engine` 用于设置默认存储引擎。"
+      "explanation": "`default-storage-engine` 用于设置默认存储引擎。",
+      "options": [
+        "default-engine",
+        "storage-engine",
+        "default-storage-engine",
+        "engine-default"
+      ]
     },
     {
       "id": 36,
-      "type": "fill",
+      "type": "choice",
       "question": "下列关于MySQL的说法，不正确的是（ ）",
       "answer": "D",
-      "explanation": "MySQL是跨平台的开源系统，可在Windows、Linux、Mac等系统运行。"
+      "explanation": "MySQL是跨平台的开源系统，可在Windows、Linux、Mac等系统运行。",
+      "options": [
+        "MySQL是开源数据库",
+        "MySQL可跨平台",
+        "MySQL成本低",
+        "MySQL只能在Windows运行"
+      ]
     },
     {
       "id": 37,
-      "type": "fill",
+      "type": "choice",
       "question": "MySQL提供网络服务的默认端口是（ ）",
       "answer": "A",
-      "explanation": "**3306** 是MySQL默认端口。1433是SQL Server，1521是Oracle。"
+      "explanation": "**3306** 是MySQL默认端口。1433是SQL Server，1521是Oracle。",
+      "options": [
+        "3306",
+        "1433",
+        "1521",
+        "33060"
+      ]
     },
     {
       "id": 38,
-      "type": "fill",
+      "type": "choice",
       "question": "安装MySQL时自动创建的数据库管理员账号是（ ）",
       "answer": "B",
-      "explanation": "**root** 是MySQL默认超级管理员账号。"
+      "explanation": "**root** 是MySQL默认超级管理员账号。",
+      "options": [
+        "admin",
+        "root",
+        "sa",
+        "user"
+      ]
     },
     {
       "id": 39,
-      "type": "fill",
+      "type": "choice",
       "question": "MySQL命令行客户端工具是（ ）",
       "answer": "B",
-      "explanation": "**mysql** 是命令行客户端。mysqld是服务器进程，mysqladmin是管理工具，mysqldump是备份工具。"
+      "explanation": "**mysql** 是命令行客户端。mysqld是服务器进程，mysqladmin是管理工具，mysqldump是备份工具。",
+      "options": [
+        "mysqld",
+        "mysql",
+        "mysqladmin",
+        "mysqldump"
+      ]
     },
     {
       "id": 40,
-      "type": "fill",
+      "type": "choice",
       "question": "下列用于配置MySQL安装目录的配置选项是（ ）",
       "answer": "B",
-      "explanation": "`basedir` 指定MySQL安装目录，`datadir` 指定数据目录。"
+      "explanation": "`basedir` 指定MySQL安装目录，`datadir` 指定数据目录。",
+      "options": [
+        "datadir",
+        "basedir",
+        "bind-address",
+        "port"
+      ]
     },
     {
       "id": 41,
-      "type": "fill",
+      "type": "choice",
       "question": "包含MySQL最新特性的版本是（ ）",
       "answer": "C",
-      "explanation": "**Alpha** 版包含最新特性但稳定性差，用于测试。GA版最稳定。"
+      "explanation": "**Alpha** 版包含最新特性但稳定性差，用于测试。GA版最稳定。",
+      "options": [
+        "GA",
+        "RC",
+        "Alpha",
+        "Beta"
+      ]
     },
     {
       "id": 42,
-      "type": "fill",
+      "type": "choice",
       "question": "Linux版本MySQL安装包中表示32位的标志是（ ）",
       "answer": "A",
-      "explanation": "**i686** 表示32位x86架构。X86_64是64位。"
+      "explanation": "**i686** 表示32位x86架构。X86_64是64位。",
+      "options": [
+        "i686",
+        "X86_64",
+        "x86",
+        "amd64"
+      ]
     },
     {
       "id": 43,
-      "type": "fill",
+      "type": "choice",
       "question": "在MySQL客户端中，命令的结束符是（ ）",
       "answer": "D",
-      "explanation": "**分号（;）** 是SQL语句结束符。"
+      "explanation": "**分号（;）** 是SQL语句结束符。",
+      "options": [
+        "逗号",
+        "句号",
+        "冒号",
+        "分号"
+      ]
     },
     {
       "id": 44,
-      "type": "fill",
+      "type": "choice",
       "question": "下列用于配置MySQL客户端特性的配置节是（ ）",
       "answer": "C",
-      "explanation": "`[client]` 节配置客户端通用选项，`[mysql]` 节配置特定客户端。"
+      "explanation": "`[client]` 节用于配置客户端通用选项，`[mysql]` 节仅用于配置命令行客户端。",
+      "options": [
+        "[mysqld]",
+        "[mysql]",
+        "[client]",
+        "[server]"
+      ]
     },
     {
       "id": 45,
-      "type": "fill",
+      "type": "choice",
       "question": "下列缩写是数据库系统的是（ ）",
       "answer": "B",
-      "explanation": "**DBS**（Database System）。"
+      "explanation": "**DBS**（Database System）。",
+      "options": [
+        "DB",
+        "DBS",
+        "DBMS",
+        "DBA"
+      ]
     },
     {
       "id": 46,
-      "type": "fill",
+      "type": "choice",
       "question": "在SQL语言中，用于实现数据访问控制的是（ ）",
       "answer": "D",
-      "explanation": "**DCL**（Data Control Language，数据控制语言）包括GRANT、REVOKE等权限控制语句。DQL=查询，DML=操纵，DDL=定义。"
+      "explanation": "**DCL**（Data Control Language，数据控制语言）包括GRANT、REVOKE等权限控制语句。DQL=查询，DML=操纵，DDL=定义。",
+      "options": [
+        "DDL",
+        "DML",
+        "DQL",
+        "DCL"
+      ]
     },
     {
       "id": 47,
-      "type": "fill",
+      "type": "choice",
       "question": "与计算机硬件有关的数据模型是（ ）",
       "answer": "B",
-      "explanation": "**物理数据模型** 描述数据在存储介质上的物理结构和存取方法。"
+      "explanation": "**物理数据模型** 描述数据在存储介质上的物理结构和存取方法。",
+      "options": [
+        "概念数据模型",
+        "物理数据模型",
+        "逻辑数据模型",
+        "数据模型"
+      ]
     },
     {
       "id": 48,
-      "type": "fill",
+      "type": "choice",
       "question": "下列属于概念设计的是（ ）",
       "answer": "B",
-      "explanation": "**画E-R图** 是概念设计阶段的主要工作。数据流图是需求分析，数据字典是系统设计，生成数据模式是逻辑设计。"
+      "explanation": "**画E-R图** 是概念设计阶段的主要工作。数据流图是需求分析，数据字典是系统设计，生成数据模式是逻辑设计。",
+      "options": [
+        "画数据流图",
+        "画E-R图",
+        "建立数据字典",
+        "生成数据模式"
+      ]
     },
     {
       "id": 49,
-      "type": "fill",
+      "type": "choice",
       "question": "当前大数据的数量级一般在（ ）",
       "answer": "D",
-      "explanation": "**PB**（Petabyte，拍字节）。大数据通常指PB级及以上的数据量。"
+      "explanation": "**PB**（Petabyte，拍字节）。大数据通常指PB级及以上的数据量。",
+      "options": [
+        "KB",
+        "MB",
+        "GB",
+        "PB"
+      ]
     },
     {
       "id": 50,
-      "type": "fill",
+      "type": "choice",
       "question": "下列不是MySQL分支的是（ ）",
       "answer": "D",
-      "explanation": "**PostgreSQL** 是独立的数据库系统，不是MySQL分支。MariaDB、Drizzle、Percona都是MySQL分支。"
+      "explanation": "**PostgreSQL** 是独立的数据库系统，不是MySQL分支。MariaDB、Drizzle、Percona都是MySQL分支。",
+      "options": [
+        "MariaDB",
+        "Drizzle",
+        "Percona",
+        "PostgreSQL"
+      ]
     },
     {
       "id": 51,
-      "type": "fill",
+      "type": "choice",
       "question": "MySQL的图形客户端是（ ）",
       "answer": "D",
-      "explanation": "**MySQL Workbench** 是官方图形客户端。Navicat、SQLyog、phpMyAdmin也是图形客户端，但题目可能侧重官方工具。"
+      "explanation": "**MySQL Workbench** 是官方图形客户端。Navicat、SQLyog、phpMyAdmin也是图形客户端，但题目可能侧重官方工具。",
+      "options": [
+        "Navicat",
+        "SQLyog",
+        "phpMyAdmin",
+        "MySQL Workbench"
+      ]
     },
     {
       "id": 52,
-      "type": "fill",
+      "type": "choice",
       "question": "MySQL安装文件夹中，存储数据库相关管理程序的子文件夹是（ ）",
       "answer": "A",
-      "explanation": "**bin** 目录存放可执行程序（如mysql、mysqld等）。"
+      "explanation": "**bin** 目录存放可执行程序（如mysql、mysqld等）。",
+      "options": [
+        "bin",
+        "lib",
+        "include",
+        "share"
+      ]
     },
     {
       "id": 53,
-      "type": "fill",
+      "type": "choice",
       "question": "下列为MySQL命令行客户端工具的是（ ）",
       "answer": "B",
-      "explanation": "**mysql** 是命令行客户端工具。"
+      "explanation": "**mysql** 是命令行客户端工具。",
+      "options": [
+        "mysqld",
+        "mysql",
+        "mysqladmin",
+        "mysqldump"
+      ]
     },
     {
       "id": 54,
-      "type": "fill",
+      "type": "choice",
       "question": "MySQL客户端输入语句的默认结束符是（ ）",
       "answer": "D",
-      "explanation": "**分号（;）**"
+      "explanation": "**分号（;）**",
+      "options": [
+        "逗号",
+        "句号",
+        "冒号",
+        "分号"
+      ]
     },
     {
       "id": 55,
-      "type": "fill",
+      "type": "choice",
       "question": "在MySQL客户程序中，用于指定服务端口的参数是（ ）",
       "answer": "D",
-      "explanation": "**-P**（大写P）指定端口。-p（小写）指定密码，-u指定用户，-h指定主机。"
+      "explanation": "**-P**（大写P）指定端口。-p（小写）指定密码，-u指定用户，-h指定主机。",
+      "options": [
+        "-p",
+        "-u",
+        "-h",
+        "-P"
+      ]
     },
     {
       "id": 56,
@@ -987,7 +1296,7 @@ var EXAM_DATA = {
       "id": 138,
       "type": "fill",
       "question": "______描述了关系的结构。",
-      "answer": "关系数据类型",
+      "answer": "关系模式",
       "explanation": "关系模式描述了关系的结构（型）。"
     },
     {
