@@ -1,4 +1,3 @@
-// Auto-generated from c.json - DO NOT EDIT
 var EXAM_DATA = {
   "subject": "C语言",
   "code": "c",
@@ -820,6 +819,175 @@ var EXAM_DATA = {
       "question": "系统函数是通过______的形式直接使用的。",
       "answer": "调用",
       "explanation": "笔记：\"系统函数：通过调用的形式直接用\"。"
+    },
+    {
+      "id": 104,
+      "type": "choice",
+      "question": "在C语言中，下列自定义标识符合法的是",
+      "options": [
+        "5la",
+        "a!3",
+        "_a2",
+        "char"
+      ],
+      "answer": "C",
+      "explanation": "C语言标识符规则：以字母或下划线开头，由字母、数字、下划线组成，不能是关键字。\n   A以数字开头不合法；B含特殊字符!不合法；D是关键字不合法。"
+    },
+    {
+      "id": 105,
+      "type": "choice",
+      "question": "在C语言中，若int a=2,b=1;执行语句a=a+b;b=a-b;a=a-b;后，则变量a的值为",
+      "options": [
+        "1",
+        "1.5",
+        "2",
+        "21"
+      ],
+      "answer": "A",
+      "explanation": "执行过程：\n    a = a + b = 2 + 1 = 3\n    b = a - b = 3 - 1 = 2\n    a = a - b = 3 - 2 = 1\n    最终a的值为1。这是不借助临时变量交换两数的方法。"
+    },
+    {
+      "id": 106,
+      "type": "choice",
+      "question": "在C语言中，下列关于switch语句描述正确的是",
+      "options": [
+        "case之后可以使用浮点型常量表达式",
+        "default标号可以省略",
+        "每个分支中都必须使用break作为结束语句",
+        "允许多个case之后的常量值相同"
+      ],
+      "answer": "B",
+      "explanation": "A错：case后必须是整型或字符型常量表达式；\n    B对：default标号可以省略；\n    C错：break不是必须的，没有break会顺序执行下一个case（穿透）；\n    D错：case后的常量值必须互不相同。"
+    },
+    {
+      "id": 107,
+      "type": "choice",
+      "question": "在C语言中，若有语句int i;for(i=0;i<6;i++){i+=1;}，则该循环体执行的次数是",
+      "options": [
+        "1次",
+        "2次",
+        "3次",
+        "4次"
+      ],
+      "answer": "C",
+      "explanation": "执行过程：\n    第1次：i=0，执行循环体后i=1，再执行i++变为2\n    第2次：i=2，执行循环体后i=3，再执行i++变为4\n    第3次：i=4，执行循环体后i=5，再执行i++变为6\n    第4次：i=6，不满足i<6，循环结束。共执行3次。"
+    },
+    {
+      "id": 108,
+      "type": "choice",
+      "question": "在C语言中，若有语句int a[5]={1,2,3};则下列选项正确的是",
+      "options": [
+        "数组a中共有三个元素，其值分别为1、2和3。",
+        "数组a前三个元素值分别为1、2和3，后两个元素值为0",
+        "数组a前三个元素值分别为1、2和3，后两个元素值为1",
+        "数组a前三个元素值分别为1、2和3，后两个元素值为任意值"
+      ],
+      "answer": "B",
+      "explanation": "定义int a[5]={1,2,3};时，数组有5个元素，前3个初始化为1、2、3，\n    剩余未显式初始化的元素自动初始化为0。"
+    },
+    {
+      "id": 109,
+      "type": "choice",
+      "question": "在C语言中，下列关于函数定义描述正确的是",
+      "options": [
+        "同一个程序文件中，函数名可以重复",
+        "函数必须有形参",
+        "函数名后的小括号()可以省略",
+        "函数体必须用花括号{ }括起来"
+      ],
+      "answer": "D",
+      "explanation": "A错：函数名不能重复；\n    B错：函数可以没有形参（如void fun(void)或void fun()）；\n    C错：函数名后必须有()；\n    D对：函数体必须用{}括起来，即使只有一条语句。"
+    },
+    {
+      "id": 110,
+      "type": "judge",
+      "question": "在C语言中，if语句必须与else语句配对使用。",
+      "answer": false,
+      "explanation": "if语句可以单独使用，不需要else分支。else是可选的。"
+    },
+    {
+      "id": 111,
+      "type": "judge",
+      "question": "在C语言中，语句int x[]={4,5,6};能定义数组x。",
+      "answer": true,
+      "explanation": "定义数组时可以省略长度，编译器会根据初始化列表中的元素个数自动确定数组长度（此处为3）。"
+    },
+    {
+      "id": 112,
+      "type": "judge",
+      "question": "在C语言中，不同函数内可以定义相同的变量名称。",
+      "answer": true,
+      "explanation": "局部变量的作用域仅限于定义它的函数内部，不同函数中的同名局部变量互不影响。"
+    },
+    {
+      "id": 113,
+      "type": "fill",
+      "question": "在C语言中，函数由函数头和______组成。",
+      "answer": "函数体",
+      "explanation": "C语言函数由函数头（返回值类型、函数名、参数列表）和函数体（花括号内的语句块）两部分组成。"
+    },
+    {
+      "id": 114,
+      "type": "fill",
+      "question": "在C语言中，若有int a=3;则执行语句a+=a*a;后，a的值是______。",
+      "answer": "12",
+      "explanation": "a += a*a 等价于 a = a + a*a = 3 + 3*3 = 3 + 9 = 12。"
+    },
+    {
+      "id": 115,
+      "type": "fill",
+      "question": "在C语言中，顺序结构的每条语句必须执行且只能执行______次。",
+      "answer": "1（或一）",
+      "explanation": "顺序结构中，语句按照书写顺序依次执行，每条语句执行一次。"
+    },
+    {
+      "id": 116,
+      "type": "fill",
+      "question": "在C语言中，提前结束本次循环，进入下一次循环的关键字是______。",
+      "answer": "continue",
+      "explanation": "continue语句用于跳过循环体中剩余的语句，立即进入下一次循环条件判断。"
+    },
+    {
+      "id": 117,
+      "type": "fill",
+      "question": "在C语言中，如有语句char x[10]=\"abc\";则x[3]的值是______。",
+      "answer": "'\\0'（或0）",
+      "explanation": "字符串\"abc\"在内存中存储为'a','b','c','\\0'，x[3]即第4个元素是字符串结束标志'\\0'（ASCII值为0）。"
+    },
+    {
+      "id": 118,
+      "type": "fill",
+      "question": "从用户使用的角度，C语言函数分为______和自定义函数两大类。",
+      "answer": "库函数（或标准函数/系统函数）",
+      "explanation": "C语言函数分为库函数（由系统提供，如printf、scanf等）和自定义函数（由程序员编写）两大类。"
+    },
+    {
+      "id": 119,
+      "type": "fill",
+      "question": "编程实现：根据如下分段数学函数f(x)的定义，完善程序代码。\n⎧ 0          (x ≤ 0)\n         ⎪ x          (0 < x < 50)\n    f(x)=⎨ 2x²-1      (50 ≤ x < 100)\n         ⎪ x³-2       (100 ≤ x < 1024)\n         ⎩ 1          (x ≥ 1024)\n\n    #include <stdio.h>\n    int main()\n    {\n        int x, y;\n        scanf(\"%d\", &x);\n        if (x <= 0)\n            y = 0;\n        else if (x < 50)\n            y = x;\n        else if (______①______)\n            y = 2 * x * x - 1;\n        else if (x < 1024)\n            y = ______②______;\n        else\n            y = 1;\n        printf(\"%d\", y);\n        return 0;\n    }",
+      "answer": "① x < 100（或50 <= x && x < 100） |     ② x*x*x - 2（或x*x*x-2）",
+      "explanation": "① 前两个分支已处理x≤0和0<x<50的情况，此分支应对应50≤x<100，故条件为x<100（此时x已大于等于50）。\n    ② 对应100≤x<1024区间，函数值为x³-2，C语言中写作x*x*x-2。"
+    },
+    {
+      "id": 120,
+      "type": "fill",
+      "question": "编程实现：反转数组中的元素。如数组x原始数据是{1,2,3,4,5,6,7,8,9,10}，反转后\n数组x的数据是{10,9,8,7,6,5,4,3,2,1}。\n\n    #include <stdio.h>\n    int main()\n    {\n        int x[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, i, temp;\n        for (i = 0; i < ______③______; i++)\n        {\n            temp = x[i];\n            ______④______;\n            x[9 - i] = temp;\n        }\n        printf(\"数组反转后: \");\n        for (i = 0; i < 10; i++)\n            printf(\"%d \", x[i]);\n        printf(\"\\n\");\n        return 0;\n    }",
+      "answer": "③ 5（或10/2） |     ④ x[i] = x[9-i]",
+      "explanation": "③ 数组有10个元素，只需交换前5个和后5个即可实现反转，所以循环条件是i<5（或i<10/2）。\n    ④ 将x[i]与x[9-i]交换：先将x[9-i]的值赋给x[i]。三行交换代码为：\n       temp = x[i]; x[i] = x[9-i]; x[9-i] = temp;"
+    },
+    {
+      "id": 121,
+      "type": "fill",
+      "question": "#include <stdio.h>\nint main()\n    {\n        int num, n;\n        int lenn = 0;\n        int pos = 0;\n        scanf(\"%d,%d\", &num, &n);\n        while (num > 0)\n        {\n            lenn++;\n            if (num % 10 == n)\n                pos = lenn;\n            num = num / 10;\n        }\n        printf(\"%d,%d\", lenn, lenn - pos + 1);\n        return 0;\n    }\n\n    (1) 运行时输入1334,3后，程序的运行结果是：\n    (2) 运行时输入12345,4后，程序的运行结果是：",
+      "answer": "(1) 4,2 |     (2) 5,4",
+      "explanation": "该程序功能是：统计整数的位数(lenn)，并找出数字n从右往左数的位置(pos)，\n    最后输出位数和从左边数的位置(lenn-pos+1)。\n\n    (1) 输入1334,3：\n        num=1334, n=3\n        第1轮: lenn=1, 4≠3, num=133\n        第2轮: lenn=2, 3==3, pos=2, num=13\n        第3轮: lenn=3, 3==3, pos=3, num=1\n        第4轮: lenn=4, 1≠3, num=0\n        输出: lenn=4, lenn-pos+1=4-3+1=2 → 结果为\"4,2\"\n\n    (2) 输入12345,4：\n        num=12345, n=4\n        第1轮: lenn=1, 5≠4, num=1234\n        第2轮: lenn=2, 4==4, pos=2, num=123\n        第3轮: lenn=3, 3≠4, num=12\n        第4轮: lenn=4, 2≠4, num=1\n        第5轮: lenn=5, 1≠4, num=0\n        输出: lenn=5, lenn-pos+1=5-2+1=4 → 结果为\"5,4\""
+    },
+    {
+      "id": 122,
+      "type": "fill",
+      "question": "#include <stdio.h>\nint func(int n)\n    {\n        int a = 1, b = 1, c, i;\n        if (n < 3)\n            return 1;\n        else\n        {\n            for (i = 2; i < n; i++)\n            {\n                c = a + b;\n                a = b;\n                b = c;\n            }\n            return c;\n        }\n    }\n    int main()\n    {\n        int n;\n        scanf(\"%d\", &n);\n        printf(\"%d\", func(n));\n        return 0;\n    }\n\n    (1) 运行时输入2，结果是：\n    (2) 运行时输入5，结果是：",
+      "answer": "(1) 1 |     (2) 5",
+      "explanation": "该程序用迭代法计算斐波那契数列。数列规律：1, 1, 2, 3, 5, 8, 13...\n    - func(1): n<3, 返回1\n    - func(2): n<3, 返回1\n    - func(3): i=2, c=1+1=2, 返回2\n    - func(4): i=2, c=2; i=3, c=1+2=3, 返回3\n    - func(5): i=2, c=2; i=3, c=3; i=4, c=2+3=5, 返回5"
     }
   ]
 };

@@ -58,6 +58,7 @@ var Exam = (function() {
     dom.fillCount    = document.getElementById('fillCount');
     dom.judgeCount   = document.getElementById('judgeCount');
     dom.navFloat     = document.getElementById('navFloat');
+    dom.examDialog   = document.getElementById('examDialog');
   }
 
   // ===== INIT =====
@@ -176,8 +177,23 @@ var Exam = (function() {
     });
   }
 
-  function updateStats() {
+  // Randomly select 'count' questions and fully shuffle them
+  function shuffleRandom(count) {
     var total = state.questions.length;
+    var limit = Math.min(count, total);
+    // Create array of all indices
+    var indices = state.questions.map(function(_, i) { return i; });
+    // Fisher-Yates shuffle the indices
+    for (var i = indices.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = indices[i]; indices[i] = indices[j]; indices[j] = tmp;
+    }
+    // Take the first 'limit' indices
+    state.displayOrder = indices.slice(0, limit);
+  }
+
+  function updateStats() {
+    var total = state.examMode ? state.displayOrder.length : state.questions.length;
     if (dom.totalCount)  dom.totalCount.textContent  = total;
     if (dom.choiceCount) dom.choiceCount.textContent = countType('choice');
     if (dom.fillCount)   dom.fillCount.textContent   = countType('fill');
@@ -312,16 +328,88 @@ var Exam = (function() {
     updateProgress();
   }
 
+  // ===== EXAM DIALOG =====
+  function createExamDialog() {
+    if (document.getElementById('examDialog')) return;
+    var overlay = document.createElement('div');
+    overlay.id = 'examDialogOverlay';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:10000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px);';
+
+    var dialog = document.createElement('div');
+    dialog.id = 'examDialog';
+    dialog.style.cssText = 'background:var(--dk);border:1px solid rgba(255,238,0,.3);padding:30px 35px;max-width:400px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5);';
+
+    var title = document.createElement('div');
+    title.textContent = '选择考试题目数量';
+    title.style.cssText = 'font-size:18px;font-weight:900;letter-spacing:3px;margin-bottom:8px;color:var(--y);';
+
+    var subtitle = document.createElement('div');
+    subtitle.textContent = 'SELECT QUESTION COUNT';
+    subtitle.style.cssText = 'font-size:10px;color:var(--g);letter-spacing:2px;font-family:"Courier New",monospace;margin-bottom:25px;';
+
+    var btnWrap = document.createElement('div');
+    btnWrap.style.cssText = 'display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;';
+
+    var options = ['50', '100', '150', '200', 'ALL'];
+    options.forEach(function(opt) {
+      var btn = document.createElement('button');
+      btn.textContent = opt;
+      btn.style.cssText = 'padding:12px 0;background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--w);font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;font-family:inherit;letter-spacing:1px;';
+      btn.onmouseenter = function() { this.style.background = 'rgba(255,238,0,.1)'; this.style.borderColor = 'var(--y)'; this.style.color = 'var(--y)'; };
+      btn.onmouseleave = function() { this.style.background = 'transparent'; this.style.borderColor = 'rgba(255,255,255,.15)'; this.style.color = 'var(--w)'; };
+      btn.onclick = function() {
+        var count = opt === 'ALL' ? state.questions.length : parseInt(opt);
+        hideExamDialog();
+        enterExamMode(count);
+      };
+      btnWrap.appendChild(btn);
+    });
+
+    var cancelBtn = document.createElement('button');
+    cancelBtn.textContent = '取消';
+    cancelBtn.style.cssText = 'padding:8px 24px;background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--g);font-size:12px;cursor:pointer;transition:all .3s;font-family:inherit;letter-spacing:1px;';
+    cancelBtn.onmouseenter = function() { this.style.borderColor = 'var(--r)'; this.style.color = 'var(--r)'; };
+    cancelBtn.onmouseleave = function() { this.style.borderColor = 'rgba(255,255,255,.15)'; this.style.color = 'var(--g)'; };
+    cancelBtn.onclick = hideExamDialog;
+
+    dialog.appendChild(title);
+    dialog.appendChild(subtitle);
+    dialog.appendChild(btnWrap);
+    dialog.appendChild(cancelBtn);
+    overlay.appendChild(dialog);
+    document.body.appendChild(overlay);
+    dom.examDialog = dialog;
+  }
+
+  function showExamDialog() {
+    createExamDialog();
+    var overlay = document.getElementById('examDialogOverlay');
+    if (overlay) {
+      overlay.style.display = 'flex';
+      overlay.style.opacity = '0';
+      overlay.style.transition = 'opacity .3s';
+      setTimeout(function() { overlay.style.opacity = '1'; }, 10);
+    }
+  }
+
+  function hideExamDialog() {
+    var overlay = document.getElementById('examDialogOverlay');
+    if (overlay) {
+      overlay.style.opacity = '0';
+      setTimeout(function() { overlay.style.display = 'none'; }, 300);
+    }
+  }
+
   // ===== EXAM MODE =====
   function toggleExamMode() {
     if (state.examMode) {
       exitExamMode();
     } else {
-      enterExamMode();
+      showExamDialog();
     }
   }
 
-  function enterExamMode() {
+  function enterExamMode(count) {
     // Reset timer fully
     stopTimer();
     state.elapsed = 0;
@@ -336,9 +424,12 @@ var Exam = (function() {
     state.answers = {};
     state.shownAnswers = {};
 
-    // Shuffle questions by type
-    shuffleByType();
+    // Shuffle and limit questions
+    shuffleRandom(count);
     renderAll();
+
+    // Update page stats to reflect exam count
+    updateStats();
 
     // UI
     dom.examBtn.textContent = '退出考试';
@@ -363,10 +454,14 @@ var Exam = (function() {
   function exitExamMode() {
     state.examMode = false;
     stopTimer();
+    unlockQuestions();
 
     // Restore original order
     resetDisplayOrder();
     renderAll();
+
+    // Restore stats to show all questions
+    updateStats();
 
     dom.examBtn.textContent = '考试模式';
     dom.examBtn.classList.remove('active');
@@ -448,6 +543,29 @@ var Exam = (function() {
     return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
   }
 
+  // Lock/unlock question interaction
+  function lockQuestions() {
+    document.querySelectorAll('.question-option, .judge-btn').forEach(function(el) {
+      el.style.pointerEvents = 'none';
+      el.style.opacity = '0.5';
+    });
+    document.querySelectorAll('.fill-input').forEach(function(el) {
+      el.disabled = true;
+      el.style.opacity = '0.5';
+    });
+  }
+
+  function unlockQuestions() {
+    document.querySelectorAll('.question-option, .judge-btn').forEach(function(el) {
+      el.style.pointerEvents = '';
+      el.style.opacity = '';
+    });
+    document.querySelectorAll('.fill-input').forEach(function(el) {
+      el.disabled = false;
+      el.style.opacity = '';
+    });
+  }
+
   // ===== SUBMIT & GRADING =====
   function submitExam() {
     if (state.submitted) return;
@@ -465,6 +583,7 @@ var Exam = (function() {
     state.result = result;
     showResults(result);
     showStats(result);
+    lockQuestions();
 
     if (dom.statsArea) dom.statsArea.scrollIntoView({ behavior: 'smooth' });
   }
@@ -594,6 +713,7 @@ var Exam = (function() {
   function continueExam() {
     state.submitted = false;
     state.showOnlyWrong = false;
+    unlockQuestions();
     if (dom.statsArea) dom.statsArea.style.display = 'none';
     if (dom.submitArea) dom.submitArea.style.display = 'block';
     document.querySelectorAll('.result-area').forEach(function(el) { el.innerHTML = ''; el.style.display = 'none'; });
@@ -615,6 +735,10 @@ var Exam = (function() {
   // ===== PROGRESS =====
   function updateProgress() {
     if (!dom.progressFill) return;
+    if (state.examMode) {
+      updateExamProgress();
+      return;
+    }
     var total = state.questions.length;
     var pct = total > 0 ? (document.querySelectorAll('.question-item:not(.hidden)').length / total * 100) : 0;
     dom.progressFill.style.width = pct + '%';
@@ -622,7 +746,7 @@ var Exam = (function() {
 
   function updateExamProgress() {
     if (!dom.progressFill) return;
-    var total = state.questions.length;
+    var total = state.displayOrder.length;
     var answered = Object.keys(state.answers).length;
     dom.progressFill.style.width = total > 0 ? (answered / total * 100) + '%' : '0%';
   }
